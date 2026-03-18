@@ -1,0 +1,73 @@
+@import "../../.cache/wal/colors-waybar.css";
+
+* {
+    border: none;
+    border-radius: 12px;
+    font-family: "SF Pro Display", "monospace";
+    font-size: 16px;
+    min-height: 0;
+}
+
+window#waybar {
+    background-color: rgba(0, 0, 0, 0.75);
+    color: @foreground;
+    border: 0px solid @color5;
+    margin: 5px 10px;
+}
+
+/* --- Module Spacing --- */
+#custom-arch, #workspaces, #mpris, #window, #pulseaudio, #language, #clock, #custom-notification {
+    padding-top: 2px;
+    padding-bottom: 2px;
+    margin: 0 15px; 
+}
+
+/* --- Permanent White Shiny Arch Logo --- */
+#custom-arch {
+    color: #ffffff; 
+    font-size: 23px;
+    margin-left: 20px;
+    
+    /* Triple Layer White Glow */
+    text-shadow: 0 0 10px #ffffff, 
+                 0 0 21px #ffffff, 
+                 0 0 15px #ffffff;
+    
+    transition: all 0.3s ease-in-out;
+}
+
+#custom-arch:hover {
+    color: #ffffff;
+    /* Extra Bloom on Hover (Alternative to scaling) */
+    text-shadow: 0 0 30px #ffffff, 
+                 0 0 50px #ffffff, 
+                 0 0 70px #ffffff;
+}
+
+/* --- Workspaces --- */
+#workspaces button {
+    padding: 0 6px;
+    color: @color5;
+    text-shadow: 0 0 5px @color5;
+    transition: all 0.3s ease;
+}
+
+#workspaces button.active {
+    color: @foreground;
+    text-shadow: 0 0 8px @foreground, 0 0 15px @color5;
+    border-bottom: 2px solid @color5;
+}
+
+/* --- Notification Bell --- */
+#custom-notification {
+    color: @color2;
+    text-shadow: 0 0 8px @color2, 0 0 15px @color2;
+    font-size: 20px;
+}
+
+/* --- Module Colors & Glows --- */
+#mpris { color: @color3; text-shadow: 0 0 5px @color3; }
+#window { font-weight: bold; color: @foreground; }
+#pulseaudio { color: @color4; text-shadow: 0 0 5px @color4; }
+#language { color: @color1; text-shadow: 0 0 5px @color1; font-weight: bold; }
+#clock { color: @color6; text-shadow: 0 0 5px @color6; font-weight: bold; }

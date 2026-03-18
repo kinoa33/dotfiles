@@ -1,0 +1,65 @@
+/* Window Container - Compact & Narrow */
+window {
+    margin: 0px;
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Very thin, neutral border */
+    border-radius: 10px;
+    background-color: rgba(18, 18, 18, 0.5); /* Dark, professional charcoal */
+    font-family: "JetBrainsMono Nerd Font";
+    font-size: 13px;
+}
+
+/* Search Input - Clean and integrated */
+#input {
+    margin: 10px;
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.03);
+    color: #d1d1d1;
+    font-weight: 500;
+}
+
+/* Inner list box */
+#inner-box {
+    margin: 5px 10px 10px 10px;
+    border: none;
+}
+
+/* List Items - Tight spacing for a neat look */
+#entry {
+    padding: 6px 10px;
+    margin: 2px 0px;
+    border-radius: 4px;
+    transition: background-color 0.15s ease; /* Minimalist smooth fade */
+}
+
+/* Text Styling - High readability, very subtle glow */
+#text {
+    color: #b0b0b0;
+    font-weight: 500;
+    /* This creates a very faint "sharpness" rather than a neon glow */
+    text-shadow: 0 0 1px rgba(255, 255, 255, 0.1); 
+}
+
+/* Selected State - Subtle highlight */
+#entry:selected {
+    background-color: rgba(255, 255, 255, 0.08); /* Slight lift in brightness */
+    outline: none;
+}
+
+#entry:selected #text {
+    color: #ffffff;
+    text-shadow: 0 0 4px rgba(255, 255, 255, 0.2); /* Calm, professional glow */
+}
+
+/* Image/Icon size adjustment */
+#img {
+    margin-right: 10px;
+    opacity: 0.8; /* Slightly dimmed for a calmer look */
+}
+
+/* Hide scrollbars for a cleaner UI */
+#scroll {
+    margin: 0px;
+    border: none;
+}
