@@ -4,40 +4,40 @@ window {
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 12px;
     /* Lower opacity (0.6) allows the Hyprland blur to work */
-    background-color: rgba(15, 15, 15, 0.9); 
-    font-family: "JetBrainsMono Nerd Font";
-    font-size: 13px;
+    background-color: rgba(15, 15, 15, 0.9);
+    font-family: "Pixel Code";
+    font-size: 21px;
 }
 
 /* Search Input */
 #input {
-    margin: 10px;
+    margin: 5px;
     padding: 8px;
     border: none;
-    border-radius: 8px;
+    border-radius: 10px;
     background-color: rgba(255, 255, 255, 0.05);
     color: #ffffff;
 }
 
 /* Inner list box */
 #inner-box {
-    margin: 5px 10px 10px 10px;
+    margin: 5px 10px 5px 10px;
 }
 
 /* List Items */
 #entry {
     padding: 8px 12px;
-    margin: 2px 0px;
-    border-radius: 6px;
-    transition: background-color 0.15s ease;
+    margin: 12px 10px;
+    border-radius: 10px;
+    transition: background-color 0.35s ease;
 }
 
 /* Logo / Icon Styling */
 #img {
-    margin-right: 12px;
-    min-width: 24px;
+    margin-right: 22px;
+    min-width: 34px;
     min-height: 24px;
-    max-width: 24px;
+    max-width: 34px;
     max-height: 24px;
 }
 
@@ -55,7 +55,7 @@ window {
 
 #entry:selected #text {
     color: #ffffff;
-    text-shadow: 0 0 4px rgba(255, 255, 255, 0.7);
+    text-shadow: 0 0 9px rgba(255, 255, 255, 0.9);
 }
 
 #scroll {
