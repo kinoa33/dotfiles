@@ -1,0 +1,32 @@
+---@type ChadrcConfig
+local M = {}
+
+M.ui = {
+  transparency = true,
+  theme = "tokyonight",
+
+  hl_override = {
+    Normal = { bg = "none" },
+    NormalNC = { bg = "none" },
+    SignColumn = { bg = "none" },
+    VertSplit = { bg = "none" },
+    StatusLine = { bg = "none" },
+    StatusLineNC = { bg = "none" },
+    EndOfBuffer = { bg = "none" },
+  },
+}
+
+-- forced transparency                           
+vim.schedule(function()
+  vim.cmd [[
+    hi Normal guibg=NONE ctermbg=NONE
+    hi NormalNC guibg=NONE
+    hi EndOfBuffer guibg=NONE
+    hi SignColumn guibg=NONE
+    hi VertSplit guibg=NONE
+    hi StatusLine guibg=NONE
+    hi StatusLineNC guibg=NONE
+  ]]
+end)
+
+return M
