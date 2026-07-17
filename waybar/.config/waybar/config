@@ -1,0 +1,91 @@
+{
+    "position": "top",
+    "height": 42,
+    "margin-top": 0,
+    "margin-left": 50,
+    "margin-right": 50,
+
+    "modules-left": [ "custom/arch" ,"clock" ,"hyprland/language", "pulseaudio" ],
+    "modules-center": ["hyprland/workspaces"],
+    "modules-right": [  "custom/cava", "custom/battery" , "tray"  ],
+
+
+    "custom/battery": {
+        "exec": "echo ' 󰂅  100% '",
+
+        "interval": 20,
+        "tooltip": false
+    },
+
+    "custom/arch": {
+        "format": " 󰣇",
+        "tooltip": false
+    },
+
+    "hyprland/workspaces": {
+        "format": "{name}",
+        "on-click": " activate",
+        "all-outputs": true,
+        "persistent-workspaces": {
+            "*": 3
+        }
+    },
+
+    "clock": {
+        "format": "{:%I:%M %p}",
+        "format-alt": "{:%Y-%m-%d}",
+        "tooltip": false
+    },
+
+    "custom/cava": {
+        "exec": "sh ~/.config/waybar/scripts/cava.sh",
+        "format": "{}"
+        
+    },
+
+    "cpu": { "format": "  {usage}%" },
+    "memory": { "format": "  {}%" },
+
+    "backlight": {
+        "device": "intel_backlight",
+        "format": "{icon} {percent}%",
+        "format-icons": ["", "", "", "", "", "", "", "", ""]
+    },
+
+    "hyprland/language": {
+        "format": "   {}",
+        "format-en": "EN",
+        "format-ar": "AR"
+    },
+
+    "pulseaudio": {
+        "format": "{icon} {volume}%",
+        "format-icons": { "default": ["  ", "  ", " "] }
+    },
+
+    "custom/notification": {
+        "tooltip": false,
+        "format": "{icon}",
+        "format-icons": {
+            "notification": "",
+            "none": "",
+            "dnd-notification": "",
+            "dnd-none": "",
+            "inhibited-notification": "",
+            "inhibited-none": "",
+            "dnd-inhibited-notification": "",
+            "dnd-inhibited-none": ""
+        },
+        "return-type": "json",
+        "exec-if": "which swaync-client",
+        "exec": "swaync-client -swb",
+        "on-click": "swaync-client -t -sw",
+        "on-click-right": "swaync-client -d -sw",
+        "escape": true
+    },
+
+    "tray": {
+        "icon-size":  18,
+        "spacing": 8
+    }
+}

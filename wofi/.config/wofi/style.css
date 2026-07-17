@@ -1,0 +1,52 @@
+window {
+    margin: 0 0 0 8px;
+    border: 1px solid #1D2523;
+    border-radius: 14px;
+    background-color: rgba(25, 25, 31,  0.70);
+    font-family: "Iosevka Nerd Font", monospace;
+    color: #506541;
+    box-shadow: 0 0px 24px rgba(88, 144, 140, 0.7);
+}
+#input {
+    margin: 12px 12px 8px;
+    padding: 6px 12px;
+    border: 2px solid #1D2923;
+    border-radius: 21px;
+    background-color: rgba(25, 42, 43, 0.04);
+    color: #ffffff;
+    font-size: 17px;
+    outline: none;
+}
+#input::placeholder { color: #ffffff; }
+#entry {
+    padding: 10px 20px;
+    border-radius: 8px;
+    margin: 6px 20px;
+    color: #ffffff;
+}
+#entry:selected {
+    background-color: rgba(255, 255, 255, 0.0);
+    border: 1px solid #9296AF;
+    color: #58908C;
+}
+#text {
+    font-size: 24px;
+    padding-left: 15px;
+    text-shadow: 0 0 6px rgba(255, 255, 255, 0.470), 0 0 6px rgba(255, 255, 255, 0.10);
+}
+#entry:selected #text {
+    text-shadow: 0 0 5px #ffffff, 0 0 5px rgba(255, 255, 255, 0.20);
+}
+
+#scroll {
+  background: transparent;
+  margin: 0;
+  padding: 0;
+}
+
+
+#outer-box {
+  margin: 1px;
+  padding: 0;
+  background: transparent;
+}
