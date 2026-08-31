@@ -1,91 +1,76 @@
 {
+    "layer": "top",
     "position": "top",
-    "height": 42,
-    "margin-top": 0,
-    "margin-left": 50,
-    "margin-right": 50,
-
-    "modules-left": [ "custom/arch" ,"clock" ,"hyprland/language", "pulseaudio" ],
-    "modules-center": ["hyprland/workspaces"],
-    "modules-right": [  "custom/cava", "custom/battery" , "tray"  ],
-
-
-    "custom/battery": {
-        "exec": "echo ' 󰂅  100% '",
-
-        "interval": 20,
+    "height": 17,
+    "margin-top": 7,
+    "margin-left": 25,
+    "margin-right": 25,
+    "spacing": 5,
+    "modules-left": [
+        "custom/logo",
+        "hyprland/workspaces",	
+    ],
+    "modules-center": [
+        "hyprland/window"
+    ],
+    "modules-right": [
+        "custom/sysinfo",
+        "hyprland/language",
+        "tray",
+	     "pulseaudio",
+        "clock",
+        "custom/power"
+    ],
+    "custom/logo": {
+        "format": "\uf17c",
         "tooltip": false
     },
-
-    "custom/arch": {
-        "format": " 󰣇",
-        "tooltip": false
-    },
-
     "hyprland/workspaces": {
-        "format": "{name}",
-        "on-click": " activate",
-        "all-outputs": true,
+        "format": "{icon}",
+        "on-click": "activate",
+        "format-icons": {
+            "active": "󰫢",
+            "default": "󰫣"		
+        },
         "persistent-workspaces": {
-            "*": 3
+            "*": 5
         }
     },
-
+    "hyprland/window": {
+        "format": "{title}",
+        "max-length": 60,
+        "separate-outputs": true
+    },
     "clock": {
-        "format": "{:%I:%M %p}",
-        "format-alt": "{:%Y-%m-%d}",
-        "tooltip": false
+        "format": " {:%I:%M %p} ",
+        "format-alt": " {:%A %d %B %Y}",
+        "tooltip-format": " <big>{:%A %d %B %Y}</big>",
+        "on-click": " shift_format"
     },
-
-    "custom/cava": {
-        "exec": "sh ~/.config/waybar/scripts/cava.sh",
-        "format": "{}"
-        
-    },
-
-    "cpu": { "format": "  {usage}%" },
-    "memory": { "format": "  {}%" },
-
-    "backlight": {
-        "device": "intel_backlight",
-        "format": "{icon} {percent}%",
-        "format-icons": ["", "", "", "", "", "", "", "", ""]
-    },
-
-    "hyprland/language": {
-        "format": "   {}",
+      "hyprland/language": {
+        "format": " {}",
         "format-en": "EN",
         "format-ar": "AR"
     },
-
     "pulseaudio": {
         "format": "{icon} {volume}%",
-        "format-icons": { "default": ["  ", "  ", " "] }
-    },
-
-    "custom/notification": {
-        "tooltip": false,
-        "format": "{icon}",
+        "format-muted": "\uf6a9  Muted",
         "format-icons": {
-            "notification": "",
-            "none": "",
-            "dnd-notification": "",
-            "dnd-none": "",
-            "inhibited-notification": "",
-            "inhibited-none": "",
-            "dnd-inhibited-notification": "",
-            "dnd-inhibited-none": ""
+            "default": ["\uf026", "\uf027", "\uf028"]
         },
-        "return-type": "json",
-        "exec-if": "which swaync-client",
-        "exec": "swaync-client -swb",
-        "on-click": "swaync-client -t -sw",
-        "on-click-right": "swaync-client -d -sw",
-        "escape": true
+           
+        "scroll-step": 5,
+        "on-click": "pavucontrol" 
     },
-
     "tray": {
-        "icon-size":  18,
-        "spacing": 8
+        "icon-size": 17,
+        "spacing": 7
+    },
+    "custom/sysinfo": {
+        "exec": "~/.config/waybar/scripts/sysinfo.sh",
+        "on-click": "~/.config/waybar/scripts/sysinfo.sh toggle && pkill -RTMIN+8 waybar",
+        "return-type": "json",
+        "interval": "once",
+        "signal": 8
     }
 }
